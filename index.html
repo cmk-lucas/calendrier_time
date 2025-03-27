@@ -9,6 +9,7 @@
 <body>  
     <div class="container">  
         <h1>Calendrier des Préoccupations</h1>  
+        <button class="toggle-mode" onclick="toggleMode()">Basculer Mode Sombre</button>  
         <table class="calendar">  
             <thead>  
                 <tr>  
@@ -25,11 +26,11 @@
                 <tr>  
                     <td class="today">Événement A</td>  
                     <td>Événement B</td>  
-                    <td class="recent-event">Événement C</td>  
+                    <td>Événement C</td>  
                     <td>Événement D</td>  
                     <td>Événement E</td>  
-                    <td>Événement F</td>  
-                    <td>Événement G</td>  
+                    <td class="weekend">Événement F</td>  
+                    <td class="weekend">Événement G</td>  
                 </tr>  
                 <tr>  
                     <td>Préoccupation 1</td>  
@@ -37,11 +38,17 @@
                     <td>Préoccupation 3</td>  
                     <td>Préoccupation 4</td>  
                     <td>Préoccupation 5</td>  
-                    <td>Préoccupation 6</td>  
-                    <td>Préoccupation 7</td>  
+                    <td class="weekend">Préoccupation 6</td>  
+                    <td class="weekend">Préoccupation 7</td>  
                 </tr>  
             </tbody>  
         </table>  
     </div>  
+
+    <script>  
+        function toggleMode() {  
+            document.body.classList.toggle("dark-mode");  
+        }  
+    </script>  
 </body>  
 </html>
