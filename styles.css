@@ -1,7 +1,8 @@
 /* Styles généraux */
 body {  
     font-family: 'Arial', sans-serif;  
-    background-color: #f0f0f0;  
+    background: url('complot.png') no-repeat center center fixed;  
+    background-size: cover;  
     display: flex;  
     justify-content: center;  
     align-items: center;  
@@ -11,7 +12,7 @@ body {
 }  
 
 .container {  
-    background: linear-gradient(135deg, #ffffff, #f8f8f8);  
+    background: rgba(255, 255, 255, 0.9);  
     border-radius: 12px;  
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);  
     padding: 20px;  
@@ -22,7 +23,7 @@ body {
 
 h1 {  
     text-align: center;  
-    color: #333;  
+    color: #333 !important;  
     padding: 15px;  
     font-size: 26px;  
     text-transform: uppercase;  
@@ -65,7 +66,7 @@ th, td {
 
 th {  
     background-color: #4CAF50;  
-    color: white;  
+    color: white !important;  
     text-transform: uppercase;  
     letter-spacing: 1px;  
     transition: background-color 0.3s ease-in-out;  
@@ -110,17 +111,19 @@ td {
 
 /* Mode sombre */
 .dark-mode {  
-    background-color: #1e1e1e;  
+    background: url('complot.png') no-repeat center center fixed;  
+    background-size: cover;  
+    filter: brightness(0.6); /* Assombrit légèrement pour meilleure lisibilité */  
     color: #fff;  
 }  
 
 .dark-mode .container {  
-    background: #2a2a2a;  
+    background: rgba(42, 42, 42, 0.9);  
     box-shadow: 0 5px 25px rgba(255, 255, 255, 0.2);  
 }  
 
 .dark-mode table {  
-    background: #3a3a3a;  
+    background: rgba(58, 58, 58, 0.9);  
 }  
 
 .dark-mode th {  
@@ -142,4 +145,3 @@ td {
 .dark-mode .toggle-mode:hover {  
     background-color: #e68900;  
 }  
-
