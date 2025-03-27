@@ -14,18 +14,23 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);  
     overflow: hidden;  
     animation: fadeIn 1s;  
+    padding: 20px;  
 }  
 
 h1 {  
     text-align: center;  
     color: #333;  
     padding: 20px;  
+    font-size: 24px;  
+    text-transform: uppercase;  
+    letter-spacing: 2px;  
 }  
 
 table {  
     width: 100%;  
     border-collapse: collapse;  
     transition: transform 0.3s;  
+    background: linear-gradient(135deg, #ffffff, #f8f8f8);  
 }  
 
 th {  
@@ -34,47 +39,88 @@ th {
     padding: 15px;  
     text-align: center;  
     animation: slideIn 0.5s ease-out;  
+    text-transform: uppercase;  
+    transition: background 0.3s, transform 0.2s;  
 }  
 
-td {  
-    padding: 10px;  
-    text-align: center;  
-    border: 1px solid #ddd;  
-    transition: background-color 0.3s, transform 0.3s;  
-    opacity: 0; /* Démarre avec une opacité de 0 pour l'animation */  
-    animation: fadeInCell 0.5s forwards; /* Animation pour les cellules */  
-}  
-
-td:hover {  
-    background-color: #f1f1f1;  
+th:hover {  
+    background-color: #45a049;  
     transform: scale(1.05);  
 }  
 
+td {  
+    padding: 15px;  
+    text-align: center;  
+    border: 1px solid #ddd;  
+    transition: background-color 0.3s, transform 0.3s;  
+    opacity: 0;  
+    animation: fadeInCell 0.5s forwards ease-in-out;  
+    font-weight: bold;  
+    cursor: pointer;  
+    position: relative;  
+}  
+
+td:hover {  
+    background-color: #e3f2fd;  
+    transform: scale(1.05);  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+}  
+
+/* Style pour le week-end */
+th:nth-child(6), th:nth-child(7) {  
+    background-color: #f44336;  
+}  
+
+td:nth-child(6), td:nth-child(7) {  
+    background-color: #ffe6e6;  
+}  
+
+/* Effet d'animation au survol */
+td::after {  
+    content: "";  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background: rgba(255, 255, 255, 0.2);  
+    opacity: 0;  
+    transition: opacity 0.3s ease-in-out;  
+}  
+
+td:hover::after {  
+    opacity: 1;  
+}  
+
+/* Effet sur le jour actuel */
+.today {  
+    background-color: #ffeb3b !important;  
+    font-size: 1.2em;  
+    color: #333;  
+}  
+
+/* Effet sur un événement récent */
+.recent-event {  
+    animation: pulse 1s infinite alternate;  
+    background-color: #e1f5fe !important;  
+}  
+
 @keyframes fadeIn {  
-    from {  
-        opacity: 0;  
-    }  
-    to {  
-        opacity: 1;  
-    }  
+    from { opacity: 0; }  
+    to { opacity: 1; }  
 }  
 
 @keyframes slideIn {  
-    from {  
-        transform: translateY(-20px);  
-        opacity: 0;  
-    }  
-    to {  
-        transform: translateY(0);  
-        opacity: 1;  
-    }  
+    from { transform: translateY(-20px); opacity: 0; }  
+    to { transform: translateY(0); opacity: 1; }  
 }  
 
 @keyframes fadeInCell {  
-    from {  
-        opacity: 0; /* Commence avec une opacité de 0 */  
-    }  
-    to {  
-        opacity: 1; /* Puis devient visible */  
-    }  
+    from { opacity: 0; }  
+    to { opacity: 1; }  
 }  
+
+@keyframes pulse {  
+    0% { transform: scale(1); background-color: #bbdefb; }  
+    100% { transform: scale(1.05); background-color: #90caf9; }  
+}
