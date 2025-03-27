@@ -1,0 +1,80 @@
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f0f0f0;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    margin: 0;  
+}  
+
+.container {  
+    background-color: #ffffff;  
+    border-radius: 10px;  
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);  
+    overflow: hidden;  
+    animation: fadeIn 1s;  
+}  
+
+h1 {  
+    text-align: center;  
+    color: #333;  
+    padding: 20px;  
+}  
+
+table {  
+    width: 100%;  
+    border-collapse: collapse;  
+    transition: transform 0.3s;  
+}  
+
+th {  
+    background-color: #4CAF50;  
+    color: white;  
+    padding: 15px;  
+    text-align: center;  
+    animation: slideIn 0.5s ease-out;  
+}  
+
+td {  
+    padding: 10px;  
+    text-align: center;  
+    border: 1px solid #ddd;  
+    transition: background-color 0.3s, transform 0.3s;  
+    opacity: 0; /* Démarre avec une opacité de 0 pour l'animation */  
+    animation: fadeInCell 0.5s forwards; /* Animation pour les cellules */  
+}  
+
+td:hover {  
+    background-color: #f1f1f1;  
+    transform: scale(1.05);  
+}  
+
+@keyframes fadeIn {  
+    from {  
+        opacity: 0;  
+    }  
+    to {  
+        opacity: 1;  
+    }  
+}  
+
+@keyframes slideIn {  
+    from {  
+        transform: translateY(-20px);  
+        opacity: 0;  
+    }  
+    to {  
+        transform: translateY(0);  
+        opacity: 1;  
+    }  
+}  
+
+@keyframes fadeInCell {  
+    from {  
+        opacity: 0; /* Commence avec une opacité de 0 */  
+    }  
+    to {  
+        opacity: 1; /* Puis devient visible */  
+    }  
+}  
